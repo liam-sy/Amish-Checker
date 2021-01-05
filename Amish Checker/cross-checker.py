@@ -1,16 +1,16 @@
 import csv
 
+from file_picker import pa_i, pa_o, ca_i, ca_o
+
 a_list=[]
 na_list=[]
 x=0
 
 #open and read the confirmed amish list
-c_amish=open("files/new confirmed amish.csv", "r")
-data1=c_amish.read()
+data1=ca_o.read()
 
 #open and read the potential amish list
-p_amish=open("files/new smicksburg.csv", "r")
-data2=p_amish.readlines()
+data2=pa_o.readlines()
 
 for i in range(len(data2)):
     target=data2[x].replace('\n', '')
@@ -33,5 +33,5 @@ for x in range(len(na_list)):
     print(str(na_list[x]))
     x+=1
 
-c_amish.close
-p_amish.close
+ca_o.close
+pa_o.close
