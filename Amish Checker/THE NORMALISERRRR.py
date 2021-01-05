@@ -1,25 +1,33 @@
+from file_picker import pa_i, pa_o, ca_i, ca_o
+
 #target == word you want to change / common == word that it will change to
 
-target=""
-common=""
+x=0
 
-og_amish=open("files/Contact Filtered Export Contacts (4).csv", "r+")
-data_a=og_amish.read()
-og_amish.close()
+target = "Boddorf"
+common = "BABABABABABABABA"
 
-og_smicksburg=open("files/Terr 089- (Smicksburg) - All Data Compiled.csv", "r+")
-data_s=og_smicksburg.read()
-og_smicksburg.close()
+data = pa_i.read()
 
-if target in data_a or data_s:
-    data_a = data_a.replace(target, common)
-    data_s = data_s.replace(target, common)
+if target in data:
+    data = data.replace(target, common)
 
-with open("files/Contact Filtered Export Contacts (4).csv", "w") as new_words_a:
-    new_words_a.write(data_a)
+while x>1:
+    pa_i.write(data)
+    x+=1
+pa_i.close()
 
-with open("files/Terr 089- (Smicksburg) - All Data Compiled.csv", "w") as new_words_s:
-    new_words_s.write(data_s)
+#//////////// ^ Territory Above /// Amish below v /////////////#
 
-new_words_a.close
-new_words_s.close
+x=0
+
+data = ca_i.read()
+
+if target in data:
+    data = data.replace(target, common)
+
+while x>1:
+    ca_i.write(data)
+    x+=1
+
+ca_i.close()
