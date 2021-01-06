@@ -9,12 +9,16 @@ common = ""
 
 data = pa_i.read()
 
+pa_i.seek(0)
+pa_i.truncate()
+
 if target in data:
     data = data.replace(target, common)
 
-while x>1:
+while x != 1:
     pa_i.write(data)
-    x+=1
+    x += 1
+
 pa_i.close()
 
 #//////////// ^ Territory Above /// Amish below v /////////////#
@@ -23,11 +27,14 @@ x=0
 
 data = ca_i.read()
 
+ca_i.seek(0)
+ca_i.truncate()
+
 if target in data:
     data = data.replace(target, common)
 
-while x>1:
+while x != 1:
     ca_i.write(data)
-    x+=1
+    x += 1
 
 ca_i.close()
