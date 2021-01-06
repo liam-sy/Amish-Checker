@@ -4,8 +4,8 @@ from file_picker import pa_i, pa_o, ca_i, ca_o
 
 x=0
 
-target = "Boddorf"
-common = "BABABABABABABABA"
+target = ""
+common = ""
 
 data = pa_i.read()
 
