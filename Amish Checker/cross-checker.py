@@ -10,8 +10,9 @@ x=0
 data1=ca_o.read()
 
 #open and read the potential amish list
-data2=pa_o.readlines()
+data2=pa_o.readlines() 
 
+#Check each line of the potential amish output doc against the entire amish output doc for matches
 for i in range(len(data2)):
     target=data2[x].replace('\n', '')
     x+=1
@@ -21,6 +22,8 @@ for i in range(len(data2)):
         else:
             na_list.append(str(x)+") "+target)
 
+
+#Print the matches, then the non-matches
 print("\nConfirmed Amish\n")
 
 for x in range(len(a_list)):
