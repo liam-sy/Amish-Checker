@@ -8,6 +8,7 @@ x=0
 #Clear the output document
 pa_o.truncate(0)
 
+#Take out only the "Address" column and copy it line by line into the output document
 raw_data=csv.DictReader(pa_i)
 for row in raw_data:
     raw_list.append(row['Street Address'])
@@ -28,6 +29,7 @@ x=0
 #Clear the output document
 ca_o.truncate(0)
 
+#Take out only the "Address" column and copy it line by line into the output document
 raw_data=csv.DictReader(ca_i)
 for row in raw_data:
     raw_list.append(row['Address'])
@@ -39,3 +41,4 @@ for row in raw_list:
     x+=1
 
 ca_o.close()
+
